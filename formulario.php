@@ -49,10 +49,7 @@
                                         <label class="col-lg-2 col-md-2 col-sm-12" >Fecha de Nacimiento:</label>
                                         <input type="date" name="fecha_naci" class="form-control col-lg-4 col-md-4 col-sm-12" required>
                                     </div>
-                                    <div class="form-group row">
-                                        <label class="col-lg-2 col-md-2 col-sm-12" > Foto: </label>
-                                        <input type="file" name="dni" class="form-control col-lg-4 col-md-4 col-sm-12" required>
-                                    </div>
+                                    
                                     <div class="form-group row">
                                     <label class="col-lg-2 col-md-2 col-sm-12"></label>
                                         <button type="submit" class="btn btn-danger">Guardar</button>
