@@ -1,3 +1,7 @@
+<?php
+include("include/conexion.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +28,7 @@
                         <h4>Registrar Usuarios</h4>
                         <div class="card">
                             <div class="card-body">
-                                <form action="operaciones/registrar_usuario.php" method="POST">
+                                <form action="operaciones/registrar_usuario.php" method="POST" enctype="multipart/form-data">
                                     <div class="form-group row">
                                         <label class="col-lg-2 col-md-2 col-sm-12" > DNI: </label>
                                         <input type="number" name="dni" class="form-control col-lg-4 col-md-4 col-sm-12" required>
@@ -48,8 +52,23 @@
                                     <div class="form-group row">
                                         <label class="col-lg-2 col-md-2 col-sm-12" >Fecha de Nacimiento:</label>
                                         <input type="date" name="fecha_naci" class="form-control col-lg-4 col-md-4 col-sm-12" required>
+                                    </div>   
+                                    <div class="form-group row">
+                                        <label class="col-lg-2 col-md-2 col-sm-12" >Foto:</label>
+                                        <input type="file" name="foto" class="form-control col-lg-4 col-md-4 col-sm-12" required>
                                     </div>
-                                    
+                                    <div class="form-group row">
+                                        <label class="col-lg-2 col-md-2 col-sm-12" >Rol:</label>
+                                        <select name="rol" id="">
+                                            <?php
+                                            $b_roles = "SELECT * FROM roles";
+                                            $r_b_roles = mysqli_query($conexion, $b_roles);
+                                            while ($datos_roles = mysqli_fetch_array($r_b_roles)) {?>
+                                                <option value="<?php echo $datos_roles['id'];?>"><?php echo $datos_roles['nombre'];?></option>
+                                            <?}?>                                         
+                                        </select>
+                                    </div>    
+
                                     <div class="form-group row">
                                     <label class="col-lg-2 col-md-2 col-sm-12"></label>
                                         <button type="submit" class="btn btn-danger">Guardar</button>
