@@ -8,7 +8,7 @@
     <link href="plantilla/Admin/vertical/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
     <link href="plantilla/Admin/vertical/assets/css/theme.min.css" rel="stylesheet" type="text/css" />
 </head>
-<body>
+<body>  
 <?php 
     // Lenguaje en php
     include("include/menu.php");
